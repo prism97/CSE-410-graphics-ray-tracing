@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/1605094.dir/1605094_Main.cpp.o -o 1605094  -lglut -lGLU -lGL 

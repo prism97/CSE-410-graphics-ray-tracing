@@ -1,0 +1,46 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/ubuntu/Downloads/CSE 410 Graphics/Offline-3/1605094/1605094_Header.h
+iostream
+-
+cstdio
+-
+cmath
+-
+fstream
+-
+vector
+-
+GL/glut.h
+-
+
+/home/ubuntu/Downloads/CSE 410 Graphics/Offline-3/1605094/1605094_Main.cpp
+1605094_Header.h
+/home/ubuntu/Downloads/CSE 410 Graphics/Offline-3/1605094/1605094_Header.h
+bitmap_image.hpp
+/home/ubuntu/Downloads/CSE 410 Graphics/Offline-3/1605094/bitmap_image.hpp
+
+/home/ubuntu/Downloads/CSE 410 Graphics/Offline-3/1605094/bitmap_image.hpp
+algorithm
+-
+cmath
+-
+cstdlib
+-
+fstream
+-
+iostream
+-
+iterator
+-
+limits
+-
+string
+-
+
