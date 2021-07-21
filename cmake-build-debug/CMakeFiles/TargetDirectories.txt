@@ -1,3 +1,0 @@
-/home/ubuntu/Downloads/CSE 410 Graphics/Offline-3/1605094/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/ubuntu/Downloads/CSE 410 Graphics/Offline-3/1605094/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/ubuntu/Downloads/CSE 410 Graphics/Offline-3/1605094/cmake-build-debug/CMakeFiles/1605094.dir
