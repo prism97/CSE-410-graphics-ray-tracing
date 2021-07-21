@@ -2,14 +2,10 @@
 // Created by ubuntu on ১৬/৩/২১.
 //
 //#include <windows.h>
-
-
-
-#include "1605094_Header.h"
+#include "ray_tracing_header.h"
 #include "bitmap_image.hpp"
 
 using namespace std;
-
 
 
 #define MOVE_CONST 2
@@ -24,60 +20,9 @@ vector<Light> lights;
 
 int drawgrid;
 int drawaxes;
-//
-//struct point
-//{
-//    double x,y,z;
-//};
-
-
-
-
 
 // camera variables
 Vector3D eye, upVec, rightVec, lookVec;
-//
-//// utility functions
-//void printVector(struct point A) {
-//    printf("%lf, %lf, %lf\n", A.x, A.y, A.z);
-//}
-//
-//struct point addVector(struct point A, struct point B) {
-//    return {A.x + B.x, A.y + B.y, A.z + B.z};
-//}
-//
-//struct point subtractVector(struct point A, struct point B) {
-//    return {A.x - B.x, A.y - B.y, A.z - B.z};
-//}
-//
-//void normalizeVector(struct point * A) {
-//    double x = A -> x;
-//    double y = A -> y;
-//    double z = A -> z;
-//    double magnitude = sqrt(x*x + y*y + z*z);
-//    A -> x = x / magnitude;
-//    A -> y = y / magnitude;
-//    A -> z = z / magnitude;
-//}
-//
-//struct point crossProduct(struct point A, struct point B) {
-//    return {A.y * B.z - A.z * B.y,
-//            A.z * B.x - A.x * B.z,
-//            A.x * B.y - A.y * B.x};
-//}
-//
-//struct point scalarMultiplication(double s, struct point A) {
-//    return {s * A.x, s * A.y, s * A.z};
-//}
-//
-//struct point rotateVector(struct point r, struct point v, double angle) {
-//    // A rotates about B by an angle of theta
-//    struct point res = addVector(scalarMultiplication(cos(angle), v),
-//                                 scalarMultiplication(sin(angle), crossProduct(r, v)));
-//    normalizeVector(&res);
-//    return res;
-//}
-
 
 
 void drawAxes()
@@ -127,6 +72,10 @@ void drawSS()
 {
     for (Object* o : objects) {
         o->draw();
+    }
+
+    for (Light l : lights) {
+        l.draw();
     }
 }
 
@@ -184,10 +133,10 @@ void capture() {
         }
     }
 
-    double planeDistance = (windowHeight / 2.0) / tan(viewAngle / 2.0);
+    double planeDistance = (windowHeight / 2.0) / tan((viewAngle / 2.0) * (PI / 180));
     Vector3D topLeft = eye + (lookVec * planeDistance) - (rightVec * (windowWidth / 2.0)) + (upVec * (windowHeight / 2.0));
-    double du = windowWidth / imageWidth;
-    double dv = windowHeight / imageHeight;
+    double du = (double) windowWidth / imageWidth;
+    double dv = (double) windowHeight / imageHeight;
     // choose middle of the grid cell
     topLeft = topLeft + (rightVec * (0.5 * du)) - (upVec * (0.5 * dv));
 
@@ -196,20 +145,31 @@ void capture() {
     Vector3D curPixel{};
     for (int i = 0; i < imageWidth; i++) {
         for (int j = 0; j < imageHeight; j++) {
+            nearest = -1;
+            tMin = INFINITY;
             // calculate curPixel
             curPixel = topLeft + (rightVec * (i * du)) - (upVec * (j * dv));
             // cast ray
-            Ray* ray = new Ray(eye, (curPixel - eye));
-            double* color = new double[3];
-            for (Object* o : objects) {
-                t = o->intersect(ray, color, 0);
-
+            Ray ray(eye, (curPixel - eye));
+            Color color{};
+            for (int k = 0; k < objects.size(); k++) {
+                t = objects[k]->intersectWithIllumination(ray, color, 0);
+                if (t > 0 && t < tMin) {
+                    tMin = t;
+                    nearest = k;
+                }
             }
-            image.set_pixel(i, j, color[0], color[1], color[2]);
+
+            if (nearest != -1) {
+                tMin = objects[nearest]->intersectWithIllumination(ray, color, 1);
+            }
+            color.clip();
+
+            image.set_pixel(i, j, color.r * 255, color.g * 255, color.b * 255);
         }
     }
-    image.save_image("output.bmp");;
-
+    image.save_image("output.bmp");
+    image.clear();
 }
 
 
@@ -360,6 +320,7 @@ void loadData() {
     string object_name;
     double x, y, z, w;
     Object *temp = nullptr;
+    int shine;
     for (int i = 0; i < object_count; i++) {
         sceneFile >> object_name;
         if (object_name == "sphere") {
@@ -383,13 +344,12 @@ void loadData() {
             Vector3D cube_ref(x, y, z);
             double length, width, height;
             sceneFile >> length >> width >> height;
-            temp = new GeneralQuadricSurface();
+            temp = new GeneralQuadricSurface(A, B, C, D, E, F, G, H, I, J, length, width, height, cube_ref);
         }
         sceneFile >> x >> y >> z;
         temp->setColor(x, y, z);
         sceneFile >> x >> y >> z >> w;
         temp->setCoefficients(x, y, z, w);
-        int shine;
         sceneFile >> shine;
         temp->setShine(shine);
 
@@ -397,8 +357,8 @@ void loadData() {
     }
 
     temp = new Floor(1000, 20);
-    temp->setCoefficients(0.1, 0.1, 0.1, 0.1);
-    temp->setShine(1);
+    temp->setCoefficients(0.5, 0.3, 0.4, 0.2);
+    temp->setShine(10);
     objects.push_back(temp);
 
     int light_count;
@@ -407,8 +367,8 @@ void loadData() {
     for (int i = 0; i < light_count; i++) {
         sceneFile >> x >> y >> z;
         Vector3D position(x, y, z);
-        double color[3];
-        sceneFile >> color[0] >> color[1] >> color[2];
+        sceneFile >> x >> y >> z;
+        Color color(x, y, z);
         l = new Light(position, color);
         lights.push_back(*l);
     }
@@ -437,5 +397,7 @@ int main(int argc, char **argv){
 
     glutMainLoop();		//The main loop of OpenGL
 
+    objects.clear();
+    lights.clear();
     return 0;
 }

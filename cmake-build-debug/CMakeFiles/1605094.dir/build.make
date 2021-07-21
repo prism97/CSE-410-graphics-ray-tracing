@@ -53,10 +53,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /snap/clion/152/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /snap/clion/158/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /snap/clion/152/bin/cmake/linux/bin/cmake -E rm -f
+RM = /snap/clion/158/bin/cmake/linux/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -76,27 +76,27 @@ include CMakeFiles/1605094.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/1605094.dir/flags.make
 
-CMakeFiles/1605094.dir/1605094_Main.cpp.o: CMakeFiles/1605094.dir/flags.make
-CMakeFiles/1605094.dir/1605094_Main.cpp.o: ../1605094_Main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/ubuntu/Downloads/CSE 410 Graphics/Offline-3/1605094/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/1605094.dir/1605094_Main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/1605094.dir/1605094_Main.cpp.o -c "/home/ubuntu/Downloads/CSE 410 Graphics/Offline-3/1605094/1605094_Main.cpp"
+CMakeFiles/1605094.dir/ray_tracing_main.cpp.o: CMakeFiles/1605094.dir/flags.make
+CMakeFiles/1605094.dir/ray_tracing_main.cpp.o: ../ray_tracing_main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/ubuntu/Downloads/CSE 410 Graphics/Offline-3/1605094/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/1605094.dir/ray_tracing_main.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/1605094.dir/ray_tracing_main.cpp.o -c "/home/ubuntu/Downloads/CSE 410 Graphics/Offline-3/1605094/ray_tracing_main.cpp"
 
-CMakeFiles/1605094.dir/1605094_Main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/1605094.dir/1605094_Main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/ubuntu/Downloads/CSE 410 Graphics/Offline-3/1605094/1605094_Main.cpp" > CMakeFiles/1605094.dir/1605094_Main.cpp.i
+CMakeFiles/1605094.dir/ray_tracing_main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/1605094.dir/ray_tracing_main.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/ubuntu/Downloads/CSE 410 Graphics/Offline-3/1605094/ray_tracing_main.cpp" > CMakeFiles/1605094.dir/ray_tracing_main.cpp.i
 
-CMakeFiles/1605094.dir/1605094_Main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/1605094.dir/1605094_Main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/ubuntu/Downloads/CSE 410 Graphics/Offline-3/1605094/1605094_Main.cpp" -o CMakeFiles/1605094.dir/1605094_Main.cpp.s
+CMakeFiles/1605094.dir/ray_tracing_main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/1605094.dir/ray_tracing_main.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/ubuntu/Downloads/CSE 410 Graphics/Offline-3/1605094/ray_tracing_main.cpp" -o CMakeFiles/1605094.dir/ray_tracing_main.cpp.s
 
 # Object files for target 1605094
 1605094_OBJECTS = \
-"CMakeFiles/1605094.dir/1605094_Main.cpp.o"
+"CMakeFiles/1605094.dir/ray_tracing_main.cpp.o"
 
 # External object files for target 1605094
 1605094_EXTERNAL_OBJECTS =
 
-1605094: CMakeFiles/1605094.dir/1605094_Main.cpp.o
+1605094: CMakeFiles/1605094.dir/ray_tracing_main.cpp.o
 1605094: CMakeFiles/1605094.dir/build.make
 1605094: CMakeFiles/1605094.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/home/ubuntu/Downloads/CSE 410 Graphics/Offline-3/1605094/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable 1605094"

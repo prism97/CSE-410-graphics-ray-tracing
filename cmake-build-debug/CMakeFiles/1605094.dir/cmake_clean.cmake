@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "1605094"
   "1605094.pdb"
-  "CMakeFiles/1605094.dir/1605094_Main.cpp.o"
+  "CMakeFiles/1605094.dir/ray_tracing_main.cpp.o"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -58,10 +58,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /snap/clion/152/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /snap/clion/158/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /snap/clion/152/bin/cmake/linux/bin/cmake -E rm -f
+RM = /snap/clion/158/bin/cmake/linux/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -78,7 +78,7 @@ CMAKE_BINARY_DIR = "/home/ubuntu/Downloads/CSE 410 Graphics/Offline-3/1605094/cm
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/snap/clion/152/bin/cmake/linux/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/snap/clion/158/bin/cmake/linux/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -89,7 +89,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/snap/clion/152/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/snap/clion/158/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -142,32 +142,32 @@ depend:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/1605094.dir/build.make CMakeFiles/1605094.dir/build
 .PHONY : 1605094/fast
 
-1605094_Main.o: 1605094_Main.cpp.o
+ray_tracing_main.o: ray_tracing_main.cpp.o
 
-.PHONY : 1605094_Main.o
+.PHONY : ray_tracing_main.o
 
 # target to build an object file
-1605094_Main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/1605094.dir/build.make CMakeFiles/1605094.dir/1605094_Main.cpp.o
-.PHONY : 1605094_Main.cpp.o
+ray_tracing_main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/1605094.dir/build.make CMakeFiles/1605094.dir/ray_tracing_main.cpp.o
+.PHONY : ray_tracing_main.cpp.o
 
-1605094_Main.i: 1605094_Main.cpp.i
+ray_tracing_main.i: ray_tracing_main.cpp.i
 
-.PHONY : 1605094_Main.i
+.PHONY : ray_tracing_main.i
 
 # target to preprocess a source file
-1605094_Main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/1605094.dir/build.make CMakeFiles/1605094.dir/1605094_Main.cpp.i
-.PHONY : 1605094_Main.cpp.i
+ray_tracing_main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/1605094.dir/build.make CMakeFiles/1605094.dir/ray_tracing_main.cpp.i
+.PHONY : ray_tracing_main.cpp.i
 
-1605094_Main.s: 1605094_Main.cpp.s
+ray_tracing_main.s: ray_tracing_main.cpp.s
 
-.PHONY : 1605094_Main.s
+.PHONY : ray_tracing_main.s
 
 # target to generate assembly for a file
-1605094_Main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/1605094.dir/build.make CMakeFiles/1605094.dir/1605094_Main.cpp.s
-.PHONY : 1605094_Main.cpp.s
+ray_tracing_main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/1605094.dir/build.make CMakeFiles/1605094.dir/ray_tracing_main.cpp.s
+.PHONY : ray_tracing_main.cpp.s
 
 # Help Target
 help:
@@ -178,9 +178,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... 1605094"
-	@echo "... 1605094_Main.o"
-	@echo "... 1605094_Main.i"
-	@echo "... 1605094_Main.s"
+	@echo "... ray_tracing_main.o"
+	@echo "... ray_tracing_main.i"
+	@echo "... ray_tracing_main.s"
 .PHONY : help
 
 

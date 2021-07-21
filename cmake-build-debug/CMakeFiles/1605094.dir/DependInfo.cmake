@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/ubuntu/Downloads/CSE 410 Graphics/Offline-3/1605094/1605094_Main.cpp" "/home/ubuntu/Downloads/CSE 410 Graphics/Offline-3/1605094/cmake-build-debug/CMakeFiles/1605094.dir/1605094_Main.cpp.o"
+  "/home/ubuntu/Downloads/CSE 410 Graphics/Offline-3/1605094/ray_tracing_main.cpp" "/home/ubuntu/Downloads/CSE 410 Graphics/Offline-3/1605094/cmake-build-debug/CMakeFiles/1605094.dir/ray_tracing_main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

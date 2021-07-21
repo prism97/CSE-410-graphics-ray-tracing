@@ -86,10 +86,10 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/ubuntu/Downloads/CSE 410 Graphics/Offline-3/1605094/1605094_Header.h">
+		<Unit filename="/home/ubuntu/Downloads/CSE 410 Graphics/Offline-3/1605094/ray_tracing_header.h">
 			<Option target="1605094"/>
 		</Unit>
-		<Unit filename="/home/ubuntu/Downloads/CSE 410 Graphics/Offline-3/1605094/1605094_Main.cpp">
+		<Unit filename="/home/ubuntu/Downloads/CSE 410 Graphics/Offline-3/1605094/ray_tracing_main.cpp">
 			<Option target="1605094"/>
 		</Unit>
 		<Unit filename="/home/ubuntu/Downloads/CSE 410 Graphics/Offline-3/1605094/CMakeLists.txt">

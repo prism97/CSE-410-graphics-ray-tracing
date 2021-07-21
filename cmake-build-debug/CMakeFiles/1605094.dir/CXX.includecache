@@ -6,26 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/ubuntu/Downloads/CSE 410 Graphics/Offline-3/1605094/1605094_Header.h
-iostream
--
-cstdio
--
-cmath
--
-fstream
--
-vector
--
-GL/glut.h
--
-
-/home/ubuntu/Downloads/CSE 410 Graphics/Offline-3/1605094/1605094_Main.cpp
-1605094_Header.h
-/home/ubuntu/Downloads/CSE 410 Graphics/Offline-3/1605094/1605094_Header.h
-bitmap_image.hpp
-/home/ubuntu/Downloads/CSE 410 Graphics/Offline-3/1605094/bitmap_image.hpp
-
 /home/ubuntu/Downloads/CSE 410 Graphics/Offline-3/1605094/bitmap_image.hpp
 algorithm
 -
@@ -43,4 +23,24 @@ limits
 -
 string
 -
+
+/home/ubuntu/Downloads/CSE 410 Graphics/Offline-3/1605094/ray_tracing_header.h
+iostream
+-
+cstdio
+-
+cmath
+-
+fstream
+-
+vector
+-
+GL/glut.h
+-
+
+/home/ubuntu/Downloads/CSE 410 Graphics/Offline-3/1605094/ray_tracing_main.cpp
+ray_tracing_header.h
+/home/ubuntu/Downloads/CSE 410 Graphics/Offline-3/1605094/ray_tracing_header.h
+bitmap_image.hpp
+/home/ubuntu/Downloads/CSE 410 Graphics/Offline-3/1605094/bitmap_image.hpp
 
